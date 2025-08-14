@@ -8,6 +8,7 @@ A [Robot Framework](https://robotframework.org/) project for automated testing o
 - Data-driven tests with variables and resource files
 - Supports parallel execution
 
+## Project Structure
  ```Wingz-Test-Automation/
 ├── config/
 │ └── selenium_config.py
