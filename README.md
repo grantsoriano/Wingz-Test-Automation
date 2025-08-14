@@ -8,30 +8,30 @@ A [Robot Framework](https://robotframework.org/) project for automated testing o
 - Data-driven tests with variables and resource files
 - Supports parallel execution
 
-## Project Structure
-|___ config/
-|___|___ selenium_config.py/
-|___ data/
-|___|___ expected/
-|___|___|__ expected_profile.robot
-|___|___ input/
-|___|___|__ input_creds.robot
-|___|___|__ input_profile.robot
-|___ output/
-|___|___ reports/
-|___ tests/
-|___|___ profile/
-|___|___|__ test_update_profile.robot
-|___|___ resources/
-|___|___|__ keywords/
-|___|___|___|__ login_keywords.robot
-|___|___|___|__ profile_keywords.robot
-|___|___|__ resource_mapping/
-|___|___|___|__ pages/
-|___|___|___|___|__ page_login/
-|___|___|___|___|__ page_main/
-|___|___|___|___|__ page_profile/
-|___ env/
+Wingz-Test-Automation/
+├── config/
+│ └── selenium_config.py
+├── data/
+│ ├── expected/
+│ │ └── expected_profile.robot
+│ └── input/
+│ ├── input_creds.robot
+│ └── input_profile.robot
+├── env/
+├── output/
+│ └── reports/
+├── tests/
+│ ├── profile/
+│ │ └── test_update_profile.robot
+│ └── resources/
+│ ├── keywords/
+│ │ ├── login_keywords.robot
+│ │ └── profile_keywords.robot
+│ └── resource_mapping/
+│ └── pages/
+│ ├── page_login/
+│ ├── page_main/
+│ └── page_profile/
 
 ## Installation & Setup
 1. Clone the repository
