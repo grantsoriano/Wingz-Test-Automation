@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-14T22:19:49.819905" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Update Profile" source="C:\Users\acer\Documents\~Robot\wingz_automation\tests\profile\test_update_profile.robot">
+<test id="s1-t1" name="TC-Wingz-001 - Update All Profile Fields" line="8">
+<kw name="Open Profile Page" owner="profile_keywords">
+<kw name="Login" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:50.049986" level="INFO">Opening browser 'chrome' to base url 'https://auth.wingz.me/auth/signin'.</msg>
+<arg>${selenium_config["login_url"]}</arg>
+<arg>${selenium_config["browser"]}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-14T22:19:50.049466" elapsed="2.981381"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T22:19:53.031029" elapsed="0.035932"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:53.067780" level="INFO">Typing text 'sorianograntmichael@gmail.com' into text field '//input[@id='username']'.</msg>
+<arg>${page_login_details["email"]}</arg>
+<arg>${input_creds["email"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:53.067116" elapsed="0.102626"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:53.170426" level="INFO">Typing text '1bl29LolgSVIPX' into text field '//input[@id='password']'.</msg>
+<arg>${page_login_details["password"]}</arg>
+<arg>${input_creds["password"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:53.169889" elapsed="0.075937"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:53.246464" level="INFO">Clicking button '//button[normalize-space()='Sign In']'.</msg>
+<arg>${page_login_details["login_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:53.246026" elapsed="0.063626"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_main_details["signout_button"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T22:19:53.309803" elapsed="2.509927"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:19:50.049071" elapsed="5.770804"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:55.820550" level="INFO">Clicking element '//a[@href='/account']'.</msg>
+<arg>${page_main_details["accounts"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:55.820028" elapsed="0.054142"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["profile_photo"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:19:55.874385" elapsed="0.216048"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:56.091223" level="INFO">Clicking element '//a[normalize-space()='My Profile']'.</msg>
+<arg>${page_profile_details["profile_tab"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:56.090654" elapsed="0.047920"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["first_name"]}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:19:56.138914" elapsed="0.026225"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:19:50.048824" elapsed="6.116449"/>
+</kw>
+<kw name="Fill Profile Form" owner="profile_keywords">
+<if>
+<branch type="IF" condition="&quot;${gender_locator}&quot; != &quot;&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:56.168114" level="INFO">Clicking element '//span[normalize-space()='Male']'.</msg>
+<arg>${gender_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:56.167905" elapsed="0.143757"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:19:56.167653" elapsed="0.144189"/>
+</branch>
+<status status="PASS" start="2025-08-14T22:19:56.167615" elapsed="0.144322"/>
+</if>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:56.312741" level="INFO">Typing text 'Juan' into text field '//input[@placeholder='First name']'.</msg>
+<arg>${page_profile_details["first_name"]}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:56.312100" elapsed="0.141855"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:56.454882" level="INFO">Typing text 'Dela Cruz' into text field '//input[@placeholder='Last name']'.</msg>
+<arg>${page_profile_details["last_name"]}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:56.454181" elapsed="0.075357"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:56.530481" level="INFO">Typing text 'San Juan' into text field '//input[@placeholder='Home city']'.</msg>
+<arg>${page_profile_details["home_city"]}</arg>
+<arg>${home_city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:56.529770" elapsed="0.065590"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:56.596228" level="INFO">Typing text 'I am a proud Filipino' into text field '//textarea[@placeholder='Tell us about yourself in a few words. Let your driver get to know you before your ride.']'.</msg>
+<arg>${page_profile_details["bio"]}</arg>
+<arg>${bio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:56.595585" elapsed="0.080371"/>
+</kw>
+<arg>${input_profile["first_name"]}</arg>
+<arg>${input_profile["last_name"]}</arg>
+<arg>${input_profile["home_city"]}</arg>
+<arg>${input_profile["bio"]}</arg>
+<arg>${page_profile_details["male_radio"]}</arg>
+<status status="PASS" start="2025-08-14T22:19:56.165712" elapsed="0.510386"/>
+</kw>
+<kw name="Click Save And Verify Success" owner="profile_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:56.677387" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${page_profile_details["save_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:19:56.676864" elapsed="0.073423"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${page_profile_details["save_button"]}</arg>
+<arg>${expected_profile["saved"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T22:19:56.750488" elapsed="0.442759"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:19:56.676543" elapsed="0.516834"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T22:19:57.193836" elapsed="2.122467"/>
+</kw>
+<tag>tc-wingz-001</tag>
+<status status="PASS" start="2025-08-14T22:19:50.048276" elapsed="9.268434"/>
+</test>
+<test id="s1-t2" name="TC-Wingz-003 - Update Profile with Missing First Name" line="20">
+<kw name="Open Profile Page" owner="profile_keywords">
+<kw name="Login" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:19:59.320011" level="INFO">Opening browser 'chrome' to base url 'https://auth.wingz.me/auth/signin'.</msg>
+<arg>${selenium_config["login_url"]}</arg>
+<arg>${selenium_config["browser"]}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-14T22:19:59.319098" elapsed="3.285218"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T22:20:02.604493" elapsed="0.035327"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:02.640625" level="INFO">Typing text 'sorianograntmichael@gmail.com' into text field '//input[@id='username']'.</msg>
+<arg>${page_login_details["email"]}</arg>
+<arg>${input_creds["email"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:02.640042" elapsed="0.090496"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:02.731250" level="INFO">Typing text '1bl29LolgSVIPX' into text field '//input[@id='password']'.</msg>
+<arg>${page_login_details["password"]}</arg>
+<arg>${input_creds["password"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:02.730697" elapsed="0.067220"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:02.798660" level="INFO">Clicking button '//button[normalize-space()='Sign In']'.</msg>
+<arg>${page_login_details["login_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:02.798100" elapsed="0.059016"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_main_details["signout_button"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T22:20:02.857286" elapsed="2.646871"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:19:59.318876" elapsed="6.185387"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:05.504819" level="INFO">Clicking element '//a[@href='/account']'.</msg>
+<arg>${page_main_details["accounts"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:05.504394" elapsed="0.094391"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["profile_photo"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:05.598948" elapsed="0.012924"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:05.613049" level="INFO">Clicking element '//a[normalize-space()='My Profile']'.</msg>
+<arg>${page_profile_details["profile_tab"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:05.612317" elapsed="0.070587"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["first_name"]}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:05.683063" elapsed="0.009829"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:19:59.318607" elapsed="6.374374"/>
+</kw>
+<kw name="Fill Profile Form" owner="profile_keywords">
+<if>
+<branch type="IF" condition="&quot;${gender_locator}&quot; != &quot;&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:05.694731" level="INFO">Clicking element '//span[normalize-space()='Male']'.</msg>
+<arg>${gender_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:05.694574" elapsed="0.052552"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:05.694404" elapsed="0.052791"/>
+</branch>
+<status status="PASS" start="2025-08-14T22:20:05.694377" elapsed="0.052862"/>
+</if>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:05.747760" level="INFO">Typing text '' into text field '//input[@placeholder='First name']'.</msg>
+<arg>${page_profile_details["first_name"]}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:05.747335" elapsed="0.065368"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:05.813272" level="INFO">Typing text 'Dela Cruz' into text field '//input[@placeholder='Last name']'.</msg>
+<arg>${page_profile_details["last_name"]}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:05.812856" elapsed="0.067226"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:05.880844" level="INFO">Typing text 'San Juan' into text field '//input[@placeholder='Home city']'.</msg>
+<arg>${page_profile_details["home_city"]}</arg>
+<arg>${home_city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:05.880265" elapsed="0.070719"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:05.951655" level="INFO">Typing text 'I am a proud Filipino' into text field '//textarea[@placeholder='Tell us about yourself in a few words. Let your driver get to know you before your ride.']'.</msg>
+<arg>${page_profile_details["bio"]}</arg>
+<arg>${bio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:05.951168" elapsed="0.066167"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${input_profile["last_name"]}</arg>
+<arg>${input_profile["home_city"]}</arg>
+<arg>${input_profile["bio"]}</arg>
+<arg>${page_profile_details["male_radio"]}</arg>
+<status status="PASS" start="2025-08-14T22:20:05.693295" elapsed="0.324187"/>
+</kw>
+<kw name="Click Save And Verify Error" owner="profile_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:06.018385" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${page_profile_details["save_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:06.018024" elapsed="0.077494"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["save_error"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:06.095711" elapsed="0.008393"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:06.017818" elapsed="0.086373"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T22:20:06.104580" elapsed="2.120724"/>
+</kw>
+<tag>tc-wingz-003</tag>
+<status status="PASS" start="2025-08-14T22:19:59.317892" elapsed="8.907784"/>
+</test>
+<test id="s1-t3" name="TC-Wingz-004 - Update Profile with Missing Last Name" line="32">
+<kw name="Open Profile Page" owner="profile_keywords">
+<kw name="Login" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:08.227573" level="INFO">Opening browser 'chrome' to base url 'https://auth.wingz.me/auth/signin'.</msg>
+<arg>${selenium_config["login_url"]}</arg>
+<arg>${selenium_config["browser"]}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-14T22:20:08.227129" elapsed="3.192085"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T22:20:11.419355" elapsed="0.029375"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:11.449506" level="INFO">Typing text 'sorianograntmichael@gmail.com' into text field '//input[@id='username']'.</msg>
+<arg>${page_login_details["email"]}</arg>
+<arg>${input_creds["email"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:11.448869" elapsed="0.097229"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:11.546754" level="INFO">Typing text '1bl29LolgSVIPX' into text field '//input[@id='password']'.</msg>
+<arg>${page_login_details["password"]}</arg>
+<arg>${input_creds["password"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:11.546238" elapsed="0.072870"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:11.619682" level="INFO">Clicking button '//button[normalize-space()='Sign In']'.</msg>
+<arg>${page_login_details["login_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:11.619294" elapsed="0.066040"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_main_details["signout_button"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T22:20:11.685544" elapsed="2.464870"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:08.226982" elapsed="5.923530"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:14.150984" level="INFO">Clicking element '//a[@href='/account']'.</msg>
+<arg>${page_main_details["accounts"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.150617" elapsed="0.062319"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["profile_photo"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.213093" elapsed="0.247223"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:14.460843" level="INFO">Clicking element '//a[normalize-space()='My Profile']'.</msg>
+<arg>${page_profile_details["profile_tab"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.460466" elapsed="0.082466"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["first_name"]}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.543199" elapsed="0.009216"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:08.226797" elapsed="6.325706"/>
+</kw>
+<kw name="Fill Profile Form" owner="profile_keywords">
+<if>
+<branch type="IF" condition="&quot;${gender_locator}&quot; != &quot;&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:14.554120" level="INFO">Clicking element '//span[normalize-space()='Male']'.</msg>
+<arg>${gender_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.553974" elapsed="0.045253"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:14.553833" elapsed="0.045460"/>
+</branch>
+<status status="PASS" start="2025-08-14T22:20:14.553809" elapsed="0.045519"/>
+</if>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:14.599810" level="INFO">Typing text 'Juan' into text field '//input[@placeholder='First name']'.</msg>
+<arg>${page_profile_details["first_name"]}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.599418" elapsed="0.075199"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:14.675205" level="INFO">Typing text '' into text field '//input[@placeholder='Last name']'.</msg>
+<arg>${page_profile_details["last_name"]}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.674767" elapsed="0.063793"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:14.739152" level="INFO">Typing text 'San Juan' into text field '//input[@placeholder='Home city']'.</msg>
+<arg>${page_profile_details["home_city"]}</arg>
+<arg>${home_city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.738716" elapsed="0.065842"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:14.805210" level="INFO">Typing text 'I am a proud Filipino' into text field '//textarea[@placeholder='Tell us about yourself in a few words. Let your driver get to know you before your ride.']'.</msg>
+<arg>${page_profile_details["bio"]}</arg>
+<arg>${bio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.804705" elapsed="0.081697"/>
+</kw>
+<arg>${input_profile["first_name"]}</arg>
+<arg>${EMPTY}</arg>
+<arg>${input_profile["home_city"]}</arg>
+<arg>${input_profile["bio"]}</arg>
+<arg>${page_profile_details["male_radio"]}</arg>
+<status status="PASS" start="2025-08-14T22:20:14.552815" elapsed="0.333678"/>
+</kw>
+<kw name="Click Save And Verify Error" owner="profile_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:14.887307" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${page_profile_details["save_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.886944" elapsed="0.078349"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["save_error"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.965436" elapsed="0.011432"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:14.886752" elapsed="0.090205"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T22:20:14.977256" elapsed="2.119230"/>
+</kw>
+<tag>tc-wingz-004</tag>
+<status status="PASS" start="2025-08-14T22:20:08.226322" elapsed="8.870374"/>
+</test>
+<test id="s1-t4" name="TC-Wingz-005 - Update Profile with Missing Gender Selection" line="44">
+<kw name="Open Profile Page" owner="profile_keywords">
+<kw name="Login" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:17.098215" level="INFO">Opening browser 'chrome' to base url 'https://auth.wingz.me/auth/signin'.</msg>
+<arg>${selenium_config["login_url"]}</arg>
+<arg>${selenium_config["browser"]}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-14T22:20:17.097750" elapsed="3.155796"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T22:20:20.253684" elapsed="0.030423"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:20.284864" level="INFO">Typing text 'sorianograntmichael@gmail.com' into text field '//input[@id='username']'.</msg>
+<arg>${page_login_details["email"]}</arg>
+<arg>${input_creds["email"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:20.284249" elapsed="0.097732"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:20.382649" level="INFO">Typing text '1bl29LolgSVIPX' into text field '//input[@id='password']'.</msg>
+<arg>${page_login_details["password"]}</arg>
+<arg>${input_creds["password"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:20.382120" elapsed="0.088458"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:20.471133" level="INFO">Clicking button '//button[normalize-space()='Sign In']'.</msg>
+<arg>${page_login_details["login_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:20.470734" elapsed="0.062148"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_main_details["signout_button"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T22:20:20.533047" elapsed="3.053265"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:17.097592" elapsed="6.488808"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:23.586875" level="INFO">Clicking element '//a[@href='/account']'.</msg>
+<arg>${page_main_details["accounts"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:23.586499" elapsed="0.056467"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["profile_photo"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:23.643356" elapsed="0.217944"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:23.861848" level="INFO">Clicking element '//a[normalize-space()='My Profile']'.</msg>
+<arg>${page_profile_details["profile_tab"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:23.861445" elapsed="0.049593"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["first_name"]}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:23.911187" elapsed="0.033198"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:17.097402" elapsed="6.847080"/>
+</kw>
+<kw name="Fill Profile Form" owner="profile_keywords">
+<if>
+<branch type="IF" condition="&quot;${gender_locator}&quot; != &quot;&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${gender_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-14T22:20:23.945956" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2025-08-14T22:20:23.945812" elapsed="0.000197"/>
+</branch>
+<status status="PASS" start="2025-08-14T22:20:23.945793" elapsed="0.000244"/>
+</if>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:23.946414" level="INFO">Typing text 'Juan' into text field '//input[@placeholder='First name']'.</msg>
+<arg>${page_profile_details["first_name"]}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:23.946087" elapsed="0.079459"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:24.026202" level="INFO">Typing text 'Dela Cruz' into text field '//input[@placeholder='Last name']'.</msg>
+<arg>${page_profile_details["last_name"]}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:24.025756" elapsed="0.087245"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:24.113598" level="INFO">Typing text 'San Juan' into text field '//input[@placeholder='Home city']'.</msg>
+<arg>${page_profile_details["home_city"]}</arg>
+<arg>${home_city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:24.113166" elapsed="0.067949"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:24.181680" level="INFO">Typing text 'I am a proud Filipino' into text field '//textarea[@placeholder='Tell us about yourself in a few words. Let your driver get to know you before your ride.']'.</msg>
+<arg>${page_profile_details["bio"]}</arg>
+<arg>${bio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:24.181267" elapsed="0.079901"/>
+</kw>
+<arg>${input_profile["first_name"]}</arg>
+<arg>${input_profile["last_name"]}</arg>
+<arg>${input_profile["home_city"]}</arg>
+<arg>${input_profile["bio"]}</arg>
+<status status="PASS" start="2025-08-14T22:20:23.944794" elapsed="0.316468"/>
+</kw>
+<kw name="Click Save And Verify Success" owner="profile_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:24.262125" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${page_profile_details["save_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:24.261776" elapsed="0.073974"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${page_profile_details["save_button"]}</arg>
+<arg>${expected_profile["saved"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T22:20:24.335942" elapsed="0.471653"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:24.261564" elapsed="0.546134"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T22:20:24.807992" elapsed="2.130579"/>
+</kw>
+<tag>tc-wingz-005</tag>
+<status status="PASS" start="2025-08-14T22:20:17.097093" elapsed="9.841744"/>
+</test>
+<test id="s1-t5" name="TC-Wingz-006 - Update Bio Field which Exceeds Max Length" line="55">
+<kw name="Open Profile Page" owner="profile_keywords">
+<kw name="Login" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:26.940835" level="INFO">Opening browser 'chrome' to base url 'https://auth.wingz.me/auth/signin'.</msg>
+<arg>${selenium_config["login_url"]}</arg>
+<arg>${selenium_config["browser"]}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-14T22:20:26.940396" elapsed="3.977619"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T22:20:30.918175" elapsed="0.033333"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:30.952230" level="INFO">Typing text 'sorianograntmichael@gmail.com' into text field '//input[@id='username']'.</msg>
+<arg>${page_login_details["email"]}</arg>
+<arg>${input_creds["email"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:30.951654" elapsed="0.091134"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:31.043465" level="INFO">Typing text '1bl29LolgSVIPX' into text field '//input[@id='password']'.</msg>
+<arg>${page_login_details["password"]}</arg>
+<arg>${input_creds["password"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:31.042940" elapsed="0.069072"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:31.112634" level="INFO">Clicking button '//button[normalize-space()='Sign In']'.</msg>
+<arg>${page_login_details["login_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:31.112202" elapsed="0.060300"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_main_details["signout_button"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T22:20:31.172666" elapsed="3.937118"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:26.940246" elapsed="8.169629"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:35.110340" level="INFO">Clicking element '//a[@href='/account']'.</msg>
+<arg>${page_main_details["accounts"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.109974" elapsed="0.053415"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["profile_photo"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.163537" elapsed="0.042219"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:35.206535" level="INFO">Clicking element '//a[normalize-space()='My Profile']'.</msg>
+<arg>${page_profile_details["profile_tab"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.206082" elapsed="0.063736"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["first_name"]}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.269978" elapsed="0.014027"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:26.940029" elapsed="8.344074"/>
+</kw>
+<kw name="Fill Profile Form" owner="profile_keywords">
+<if>
+<branch type="IF" condition="&quot;${gender_locator}&quot; != &quot;&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:35.285668" level="INFO">Clicking element '//span[normalize-space()='Male']'.</msg>
+<arg>${gender_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.285532" elapsed="0.048486"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:35.285398" elapsed="0.048693"/>
+</branch>
+<status status="PASS" start="2025-08-14T22:20:35.285379" elapsed="0.048750"/>
+</if>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:35.334641" level="INFO">Typing text 'Juan' into text field '//input[@placeholder='First name']'.</msg>
+<arg>${page_profile_details["first_name"]}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.334224" elapsed="0.075906"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:35.410785" level="INFO">Typing text 'Dela Cruz' into text field '//input[@placeholder='Last name']'.</msg>
+<arg>${page_profile_details["last_name"]}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.410307" elapsed="0.075396"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:35.486330" level="INFO">Typing text 'San Juan' into text field '//input[@placeholder='Home city']'.</msg>
+<arg>${page_profile_details["home_city"]}</arg>
+<arg>${home_city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.485875" elapsed="0.069843"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:35.556372" level="INFO">Typing text 'oy38fHEUjcSU1ZnbN1vMVk2PylvGvODGfb7GRU8jtdCgp6sW8GSeBDTjuOe9ZgcbW8KXgmyOwfOevcrL99KQDKpxkSrL3qxqCGgAchkp3AhV2SNWRhg4zAiTaGoAJxSpdBQAzHKDNejE7DocZSvwwet8XPvdoJr06LAqSJCc98kGeuijNspFxFAeiJDiF1FBigJerXSifU3fiFg7wiBEOetlgLhTOq8MkTueSSiVcQ6at7eGTt' into text field '//textarea[@placeholder='Tell us about yourself in a few words. Let your driver get to know you before your ride.']'.</msg>
+<arg>${page_profile_details["bio"]}</arg>
+<arg>${bio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.555897" elapsed="0.329926"/>
+</kw>
+<arg>${input_profile["first_name"]}</arg>
+<arg>${input_profile["last_name"]}</arg>
+<arg>${input_profile["home_city"]}</arg>
+<arg>${input_profile["bio_over"]}</arg>
+<arg>${page_profile_details["male_radio"]}</arg>
+<status status="PASS" start="2025-08-14T22:20:35.284423" elapsed="0.601498"/>
+</kw>
+<kw name="Click Save And Verify Success" owner="profile_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:35.886759" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${page_profile_details["save_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.886397" elapsed="0.089705"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${page_profile_details["save_button"]}</arg>
+<arg>${expected_profile["saved"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T22:20:35.976314" elapsed="0.475813"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:35.886188" elapsed="0.566074"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T22:20:36.452676" elapsed="2.159604"/>
+</kw>
+<tag>tc-wingz-006</tag>
+<status status="PASS" start="2025-08-14T22:20:26.939593" elapsed="11.673009"/>
+</test>
+<test id="s1-t6" name="TC-Wingz-007 - Update Bio Field with Exactly Max Length" line="67">
+<kw name="Open Profile Page" owner="profile_keywords">
+<kw name="Login" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:38.615334" level="INFO">Opening browser 'chrome' to base url 'https://auth.wingz.me/auth/signin'.</msg>
+<arg>${selenium_config["login_url"]}</arg>
+<arg>${selenium_config["browser"]}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-14T22:20:38.614650" elapsed="3.965577"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T22:20:42.580375" elapsed="0.024661"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:42.605772" level="INFO">Typing text 'sorianograntmichael@gmail.com' into text field '//input[@id='username']'.</msg>
+<arg>${page_login_details["email"]}</arg>
+<arg>${input_creds["email"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:42.605193" elapsed="0.092021"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:42.697957" level="INFO">Typing text '1bl29LolgSVIPX' into text field '//input[@id='password']'.</msg>
+<arg>${page_login_details["password"]}</arg>
+<arg>${input_creds["password"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:42.697371" elapsed="0.073256"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:42.771244" level="INFO">Clicking button '//button[normalize-space()='Sign In']'.</msg>
+<arg>${page_login_details["login_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:42.770766" elapsed="0.059588"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_main_details["signout_button"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T22:20:42.830501" elapsed="3.922227"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:38.614395" elapsed="8.138422"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:46.753400" level="INFO">Clicking element '//a[@href='/account']'.</msg>
+<arg>${page_main_details["accounts"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:46.753004" elapsed="0.113542"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["profile_photo"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:46.866698" elapsed="0.014598"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:46.881852" level="INFO">Clicking element '//a[normalize-space()='My Profile']'.</msg>
+<arg>${page_profile_details["profile_tab"]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:46.881452" elapsed="0.051201"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${page_profile_details["first_name"]}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T22:20:46.932898" elapsed="0.032668"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:38.614057" elapsed="8.351616"/>
+</kw>
+<kw name="Fill Profile Form" owner="profile_keywords">
+<if>
+<branch type="IF" condition="&quot;${gender_locator}&quot; != &quot;&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:46.967685" level="INFO">Clicking element '//span[normalize-space()='Male']'.</msg>
+<arg>${gender_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:46.967511" elapsed="0.045128"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:46.967361" elapsed="0.045346"/>
+</branch>
+<status status="PASS" start="2025-08-14T22:20:46.967338" elapsed="0.045404"/>
+</if>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:47.013282" level="INFO">Typing text 'Juan' into text field '//input[@placeholder='First name']'.</msg>
+<arg>${page_profile_details["first_name"]}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:47.012838" elapsed="0.073864"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:47.087296" level="INFO">Typing text 'Dela Cruz' into text field '//input[@placeholder='Last name']'.</msg>
+<arg>${page_profile_details["last_name"]}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:47.086856" elapsed="0.080838"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:47.168319" level="INFO">Typing text 'San Juan' into text field '//input[@placeholder='Home city']'.</msg>
+<arg>${page_profile_details["home_city"]}</arg>
+<arg>${home_city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:47.167895" elapsed="0.066229"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:47.234666" level="INFO">Typing text 'oy38fHEUjcSU1ZnbN1vMVk2PylvGvODGfb7GRU8jtdCgp6sW8GSeBDTjuOe9ZgcbW8KXgmyOwfOevcrL99KQDKpxkSrL3qxqCGgAchkp3AhV2SNWRhg4zAiTaGoAJxSpdBQAzHKDNejE7DocZSvwwet8XPvdoJr06LAqSJCc98kGeuijNspFxFAeiJDiF1FBigJerXSifU3fiFg7wiBEOetlgLhTOq8MkTueSSiVcQ6at7eGX' into text field '//textarea[@placeholder='Tell us about yourself in a few words. Let your driver get to know you before your ride.']'.</msg>
+<arg>${page_profile_details["bio"]}</arg>
+<arg>${bio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:47.234269" elapsed="0.380181"/>
+</kw>
+<arg>${input_profile["first_name"]}</arg>
+<arg>${input_profile["last_name"]}</arg>
+<arg>${input_profile["home_city"]}</arg>
+<arg>${input_profile["bio_max"]}</arg>
+<arg>${page_profile_details["male_radio"]}</arg>
+<status status="PASS" start="2025-08-14T22:20:46.966045" elapsed="0.648580"/>
+</kw>
+<kw name="Click Save And Verify Success" owner="profile_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T22:20:47.615995" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${page_profile_details["save_button"]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T22:20:47.615460" elapsed="0.100678"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${page_profile_details["save_button"]}</arg>
+<arg>${expected_profile["saved"]}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T22:20:47.716348" elapsed="0.486328"/>
+</kw>
+<status status="PASS" start="2025-08-14T22:20:47.615105" elapsed="0.587740"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T22:20:48.203302" elapsed="2.212649"/>
+</kw>
+<tag>tc-wingz-007</tag>
+<status status="PASS" start="2025-08-14T22:20:38.613456" elapsed="11.802793"/>
+</test>
+<status status="PASS" start="2025-08-14T22:19:49.821057" elapsed="60.596100"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">tc-wingz-001</stat>
+<stat pass="1" fail="0" skip="0">tc-wingz-003</stat>
+<stat pass="1" fail="0" skip="0">tc-wingz-004</stat>
+<stat pass="1" fail="0" skip="0">tc-wingz-005</stat>
+<stat pass="1" fail="0" skip="0">tc-wingz-006</stat>
+<stat pass="1" fail="0" skip="0">tc-wingz-007</stat>
+</tag>
+<suite>
+<stat name="Test Update Profile" id="s1" pass="6" fail="0" skip="0">Test Update Profile</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
