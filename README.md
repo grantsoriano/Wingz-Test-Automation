@@ -8,7 +8,7 @@ A [Robot Framework](https://robotframework.org/) project for automated testing o
 - Data-driven tests with variables and resource files
 - Supports parallel execution
 
-Wingz-Test-Automation/
+ ```Wingz-Test-Automation/
 ├── config/
 │ └── selenium_config.py
 ├── data/
@@ -32,7 +32,7 @@ Wingz-Test-Automation/
 │ ├── page_login/
 │ ├── page_main/
 │ └── page_profile/
-
+```
 ## Installation & Setup
 1. Clone the repository
 2. Create a Python virtual environment
